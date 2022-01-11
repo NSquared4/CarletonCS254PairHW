@@ -1,1 +1,1 @@
-# CarletonCS254HW
+# CarletonCS254PairHW
