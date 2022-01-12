@@ -121,7 +121,9 @@ def containsGA_GA(inputString):
 #Exercise 3.10
 #Claim: definedOnString.py cannot exist
 #Proof: Suppose definedOnString.py exists. We can then write the a program
-# weirdDefinedOnString.py, shown below.
+# weirdDefinedOnString.py, shown below. This program is paradoxical because 
+# calling weirdDefinedOnString on itself will break if and only if it doesn't break.
+# Thus a contradiction has arisen, and definedOnString cannot exist.
 def definedOnString(P, I):
     if P(I): 
         return 'yes'
@@ -129,13 +131,22 @@ def definedOnString(P, I):
         return 'no'
 
 def weirdDefinedOnString(inputString):
-    if definedOnString(weirdDefinedOnString, inputString) == 'yes':
-        1 / 0
+    if definedOnString(inputString, inputString) == 'yes':
+        return 1 / 0
     else:
         return 'yes'
+
+weirdDefinedOnString(rf('WeirdDefinedOnString.py'))
+
 #Exercise 3.11
+def weirdLongerThan10(inputString):
+    if longerThan10(inputString, inputString) == 'yes':
+        return 'no'
+    else:
+        return 'yes'
 
 #Exercise 3.12
+
 
 #Exercise 3.13
 
