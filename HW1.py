@@ -115,6 +115,18 @@ def containsGA_GA(inputString):
     #c: undefined
 
 #Exercise 3.8
+def noOnSelf(P):
+    if P(P) == 'no':
+        return 'yes'
+    else:
+        return 'no'
+
+def notYesOnSelf(P):
+    if P(P) == 'yes':
+        return 'no'
+    else:
+        return 'yes'
+#P = "def P(I): return 'hi'"
 
 #Component 8
 
@@ -139,6 +151,11 @@ def weirdDefinedOnString(inputString):
 weirdDefinedOnString(rf('WeirdDefinedOnString.py'))
 
 #Exercise 3.11
+#Claim: longerThan10.py cannot exist
+#Proof: Suppose longerThan10.py exists. We can then write a program 
+#weirdLongerThan10.py, shown below. This program is paradoxical because calling 
+#weirdLongerThan10.py on itself will return 'no' if and only if it is longer than 10.
+#Thus a contradiction has arisen, and longerThan10.py.
 def weirdLongerThan10(inputString):
     if longerThan10(inputString, inputString) == 'yes':
         return 'no'
@@ -146,12 +163,24 @@ def weirdLongerThan10(inputString):
         return 'yes'
 
 #Exercise 3.12
-
+#Claim: startsWithZ.py cannot exist
+#Proof: Suppose startsWithZ.py exists. We can then write a program 
+#weirdStartsWithZ.py, shown below. This program is paradoxical because calling 
+#weirdStartsWithZ.py on itself will return 'no' if and only if it starts with Z.
+#Thus a contradiction has arisen, and startsWithZ.py cannot exist.
+def weirdStartsWithZ(inputString):
+    if startsWithZ(inputString, inputString) == 'yes':
+        return 'no'
+    else:
+        return 'yes'
 
 #Exercise 3.13
+# A program that takes in a function and an input as a parameter, and returns 'yes' if and only if
+# the length of P(I) is even, 'no' otherwise is an impossible program.
 
 
 # ~~SOLO~~
 #Component 9
 
 #Exercise 3.14
+# there must be a paradoxical statement that forces the program into a contradiction. That is not the case with this proof. 
